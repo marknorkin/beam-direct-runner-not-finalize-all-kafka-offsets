@@ -19,7 +19,7 @@ org.awaitility.core.ConditionTimeoutException: Condition with alias 'sent raw me
 	at org.awaitility.core.AbstractHamcrestCondition.await(AbstractHamcrestCondition.java:89)
 	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:902)
 	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:645)
-	at com.marknorkin.beam.directrunner.sample.ParserEndToEndFlowCommitOffsetsTest.shouldTestOffsetCommit(ParserEndToEndFlowCommitOffsetsTest.java:152)
+	at com.marknorkin.beam.directrunner.sample.ParserEndToEndFlowCommitOffsetsTest.shouldTestOffsetCommit(ParserEndToEndFlowCommitOffsetsTest.java:138)
 ```
 
 For configuration of KafkaIO, please navigate [here](src/main/java/com/marknorkin/beam/directrunner/sample/KafkaIOConfig.java).
