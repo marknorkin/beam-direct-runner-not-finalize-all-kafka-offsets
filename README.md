@@ -21,6 +21,17 @@ org.awaitility.core.ConditionTimeoutException: Condition with alias 'sent raw me
 	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:645)
 	at com.marknorkin.beam.directrunner.sample.ParserEndToEndFlowCommitOffsetsTest.shouldTestOffsetCommit(ParserEndToEndFlowCommitOffsetsTest.java:138)
 ```
+and
+```
+org.awaitility.core.ConditionTimeoutException: Condition with alias 'sent raw messages are read and offsets are committed' didn't complete within 3 minutes because lambda expression in com.marknorkin.beam.directrunner.sample.ParserEndToEndFlowCommitOffsetsTest: expected <{raw_topic-0=10, raw_topic-1=10, raw_topic-2=10}> but was <{raw_topic-2=10, raw_topic-0=10}>.
+
+	at org.awaitility.core.ConditionAwaiter.await(ConditionAwaiter.java:145)
+	at org.awaitility.core.AbstractHamcrestCondition.await(AbstractHamcrestCondition.java:89)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:902)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:645)
+	at com.marknorkin.beam.directrunner.sample.ParserEndToEndFlowCommitOffsetsTest.shouldTestOffsetCommit(ParserEndToEndFlowCommitOffsetsTest.java:138)
+```
+Note the difference for partitions offsets committed in both cases above.
 
 For configuration of KafkaIO, please navigate [here](src/main/java/com/marknorkin/beam/directrunner/sample/KafkaIOConfig.java).
 
